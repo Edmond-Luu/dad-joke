@@ -2,7 +2,7 @@ import React from "react";
 
 function App() {
 
-  const [joke, setJoke] = React.useState([localStorage.getItem("joke"), undefined] || []);
+  const [joke, setJoke] = React.useState([localStorage.getItem("joke0"), localStorage.getItem("joke1")] || []);
 
 
   function jokeSetter(theJoke) {
@@ -10,7 +10,12 @@ function App() {
   }
 
   React.useEffect(() => {
-    localStorage.setItem("joke", joke[0])
+    if (joke.length > 0) {
+      localStorage.setItem("joke0", joke[0])
+      if (joke.length === 2) {
+        localStorage.setItem("joke1", joke[1])
+      }
+    }
     console.log(joke)
   }, [joke])
 
@@ -25,13 +30,19 @@ function App() {
   }
 
   function handlePrevious() {
-    if (!joke.includes(undefined)) {
+    if (!joke.includes(undefined) && !joke.includes("")) {
       setJoke(oldJoke => [oldJoke[1], oldJoke[0]])
     }
   }
 
   function handleReset() {
     setJoke([]);
+    if (joke.length > 0) {
+      localStorage.setItem("joke0", "")
+      if (joke.length === 2) {
+        localStorage.setItem("joke1", "")
+      }
+    }
   }
 
   function handleCopy() {
@@ -42,7 +53,7 @@ function App() {
     <div className="container">
       <h1 className="title">Dad Joke Generator</h1>
       <div className="jokeField">
-        <p className="jokeText" onClick={handleCopy}>{joke[0]}</p>
+        {!joke.includes(undefined) && <p className="jokeText" onClick={handleCopy}>{joke[0]}</p>}
       </div>
       <p className="caption">Click on the joke to copy it to your clipboard</p>
       <div className="button generateButton" onClick={handleClick}>Generate Joke</div>
