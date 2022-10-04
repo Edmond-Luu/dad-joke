@@ -17,3 +17,4 @@ Here are some other features to improve the aesthetics and UX:
 * When clicking on any of the buttons, the background color of the button would slightly change to a darker shade.
 * When the mouse cursor hovers over any button, there is a short box shadow animation.
 * Clicking on the joke displayed would copy it to the clipboard so that it can be pasted elsewhere.
+* The joke array would be saved in the localStorage, meaning that the 2 jokes are saved and can be accessed when reloading or exiting and returning to the app later. 
