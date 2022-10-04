@@ -20,6 +20,7 @@ body {
 .jokeField {
   width: 500px;
   height: 200px;
+  min-height: 110px;
   border-radius: 5px;
   background-color: rgb(108, 214, 188);
   display: flex;
@@ -43,36 +44,39 @@ body {
 }
 
 .button {
-  margin-top: 2vh;
+  margin-top: 15px;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 500px;
   height: 50px;
+  min-height: 45px;
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
   transition: box-shadow 250ms;
 }
 
+
 .generateButton {
   background-color: rgb(105, 225, 69);
 }
 
-.previousButton{
+.previousButton {
   background-color: rgb(255, 255, 0);
 }
 
 .resetButton {
   background-color: rgb(255, 0, 0);
+  margin-bottom: 15px;
 }
 
 .generateButton:active {
   background-color: rgb(100, 211, 66);
 }
 
-.previousButton:active{
+.previousButton:active {
   background-color: rgb(183, 183, 3);
 }
 
@@ -83,6 +87,7 @@ body {
 .button:hover {
   box-shadow: 5px 5px 5px black;
 }
+
 
 .footer {
   display: flex;
