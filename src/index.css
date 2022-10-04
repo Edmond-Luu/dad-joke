@@ -20,7 +20,6 @@ body {
 .jokeField {
   width: 500px;
   height: 200px;
-  min-height: 110px;
   border-radius: 5px;
   background-color: rgb(108, 214, 188);
   display: flex;
@@ -108,5 +107,35 @@ body {
 
   .jokeField {
     max-width: 90vw;
+  }
+}
+
+@media(max-height: 530px) {
+  .title {
+    font-size: 30px;
+    margin: 10px;
+  }
+
+  .jokeField {
+    height: 17vh;
+    min-height: 75px;
+  }
+
+  .jokeText {
+    font-size: 15px;
+  }
+
+  .bottomButtons {
+    display: flex;
+  }
+
+  .previousButton,
+  .resetButton {
+    width: 240px;
+    height: 35px;
+  }
+
+  .resetButton {
+    margin-left: 20px;
   }
 }

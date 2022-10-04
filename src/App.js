@@ -56,8 +56,10 @@ function App() {
       </div>
       <p className="caption">Click on the joke to copy it to your clipboard</p>
       <div className="button generateButton" onClick={handleClick}>Generate Joke</div>
-      <div className="button previousButton" onClick={handlePrevious}>Previous Joke</div>
-      <div className="button resetButton" onClick={handleReset}>Reset</div>
+      <div className="bottomButtons">
+        <div className="button previousButton" onClick={handlePrevious}>Previous Joke</div>
+        <div className="button resetButton" onClick={handleReset}>Reset</div>
+      </div>
       <div className="footer">
         <p>Made completely from scratch with ❤️ by <a href="https://edmond-luu.github.io" target="_blank" rel="noreferrer">Edmond Luu</a></p>
       </div>
