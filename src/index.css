@@ -53,15 +53,31 @@ body {
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
-  transition-duration: 250ms;
+  transition: box-shadow 250ms;
 }
 
 .generateButton {
   background-color: rgb(105, 225, 69);
 }
 
+.previousButton{
+  background-color: rgb(255, 255, 0);
+}
+
 .resetButton {
-  background-color: red;
+  background-color: rgb(255, 0, 0);
+}
+
+.generateButton:active {
+  background-color: rgb(100, 211, 66);
+}
+
+.previousButton:active{
+  background-color: rgb(183, 183, 3);
+}
+
+.resetButton:active {
+  background-color: rgb(178, 0, 0);
 }
 
 .button:hover {
@@ -81,10 +97,11 @@ body {
 }
 
 @media(max-width: 560px) {
-  .button{
+  .button {
     max-width: 95vw
   }
-  .jokeField{
+
+  .jokeField {
     max-width: 90vw;
   }
 }
