@@ -16,7 +16,6 @@ function App() {
         localStorage.setItem("joke1", joke[1])
       }
     }
-    console.log(joke)
   }, [joke])
 
   function handleClick() {
