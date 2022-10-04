@@ -54,7 +54,7 @@ function App() {
       <div className="jokeField">
         {!joke.includes(undefined) && !joke.includes(null) && <p className="jokeText" onClick={handleCopy}>{joke[0]}</p>}
       </div>
-      <p className="caption">Click on the joke to copy it to your clipboard</p>
+      <p className="caption">Click/tap on the joke to copy it to your clipboard</p>
       <div className="button generateButton" onClick={handleClick}>Generate Joke</div>
       <div className="bottomButtons">
         <div className="button previousButton" onClick={handlePrevious}>Previous Joke</div>
