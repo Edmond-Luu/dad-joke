@@ -2,12 +2,17 @@ import React from "react";
 
 function App() {
 
-  const [joke, setJoke] = React.useState([]);
+  const [joke, setJoke] = React.useState([localStorage.getItem("joke"), undefined] || []);
+
 
   function jokeSetter(theJoke) {
-      setJoke(oldJokes => [theJoke, oldJokes[0]])
+    setJoke(oldJokes => [theJoke, oldJokes[0]])
   }
-  
+
+  React.useEffect(() => {
+    localStorage.setItem("joke", joke[0])
+    console.log(joke)
+  }, [joke])
 
   function handleClick() {
     fetch('https://icanhazdadjoke.com', {
