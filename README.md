@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# React - Dad Joke Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Click [here](https://edmond-luu.github.io/dad-joke) or on the image below to see the app!
 
-## Available Scripts
+[![image](https://user-images.githubusercontent.com/26613209/193890119-79afded5-1727-4b4d-b187-d41e16dbda79.png)](https://edmond-luu.github.io/dad-joke)
 
-In the project directory, you can run:
+This is a simple React app I made for fun that, as the title suggests, generates a Dad Joke. This application uses a free API service from [https://icanhazdadjoke.com](https://icanhazdadjoke.com).
 
-### `npm start`
+All jokes generated are saved in an array called joke, which has a length of 2, in React's useState hook. The display would then show the joke that is in the array's  index 0 (the first item).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Dad Joke Generator has three buttons, a generate button (green), a previous button (yellow), and a reset button (red).
+* The generate button would simply generate a new Dad Joke from the API and add it to index 0 of the jokes array in the new state. The joke that was at index 0 in the joke array of the previous state would now be moved to index 1 in the new state.
+* The previous button would reverse the order of the array, which would then also change the joke that is displayed on the screen.
+* The reset button resets the whole joke array, clearing the display.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here are some other features to improve the aesthetics and UX:
+* When clicking on any of the buttons, the background color of the button would slightly change to a darker shade.
+* When the mouse cursor hovers over any button, there is a short box shadow animation.
+* Clicking on the joke displayed would copy it to the clipboard so that it can be pasted elsewhere.
