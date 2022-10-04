@@ -53,7 +53,7 @@ function App() {
     <div className="container">
       <h1 className="title">Dad Joke Generator</h1>
       <div className="jokeField">
-        {!joke.includes(undefined) && <p className="jokeText" onClick={handleCopy}>{joke[0]}</p>}
+        {!joke.includes(undefined) && !joke.includes(null) && <p className="jokeText" onClick={handleCopy}>{joke[0]}</p>}
       </div>
       <p className="caption">Click on the joke to copy it to your clipboard</p>
       <div className="button generateButton" onClick={handleClick}>Generate Joke</div>
