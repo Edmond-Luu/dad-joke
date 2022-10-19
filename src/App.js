@@ -2,21 +2,25 @@ import React from "react";
 
 function App() {
 
-  const [joke, setJoke] = React.useState([localStorage.getItem("joke0"), localStorage.getItem("joke1")] || []);
+  const [joke, setJoke] = React.useState(localStorage.getItem("joke0") || "");
+  const [prevJoke, setPrevJoke] = React.useState(localStorage.getItem("joke1") || "")
 
 
   function jokeSetter(theJoke) {
-    setJoke(oldJokes => [theJoke, oldJokes[0]])
+    if (joke !== "" || joke !== undefined){
+      setPrevJoke(joke);
+    }
+    setJoke(theJoke);
   }
 
   React.useEffect(() => {
-    if (joke.length > 0) {
-      localStorage.setItem("joke0", joke[0])
-      if (joke.length === 2) {
-        localStorage.setItem("joke1", joke[1])
+    if (!joke !== undefined && joke !== "") {
+      localStorage.setItem("joke0", prevJoke);
+      if (!prevJoke !== undefined && prevJoke !== "") {
+        localStorage.setItem("joke1", prevJoke);
       }
     }
-  }, [joke])
+  }, [joke, prevJoke])
 
   function handleClick() {
     fetch('https://icanhazdadjoke.com', {
@@ -26,19 +30,23 @@ function App() {
     })
       .then(res => res.json())
       .then(data => jokeSetter(data.joke))
+
   }
 
   function handlePrevious() {
-    if (!joke.includes(undefined) && !joke.includes("")) {
-      setJoke(oldJoke => [oldJoke[1], oldJoke[0]])
+    if (!joke !== undefined && joke !== "" && !prevJoke !== undefined && prevJoke !== "") {
+      const jokeHolder = joke;
+      setJoke(prevJoke);
+      setPrevJoke(jokeHolder);
     }
   }
 
   function handleReset() {
-    setJoke([]);
-    if (joke.length > 0) {
+    setJoke("");
+    setPrevJoke("");
+    if (!joke !== undefined && joke !== "") {
       localStorage.setItem("joke0", "")
-      if (joke.length === 2) {
+      if (!prevJoke !== undefined && prevJoke !== "") {
         localStorage.setItem("joke1", "")
       }
     }
@@ -52,7 +60,7 @@ function App() {
     <div className="container">
       <h1 className="title">Dad Joke Generator</h1>
       <div className="jokeField">
-        {!joke.includes(undefined) && !joke.includes(null) && <p className="jokeText" onClick={handleCopy}>{joke[0]}</p>}
+        {!joke !== undefined && joke !== "" && <p className="jokeText" onClick={handleCopy}>{joke}</p>}
       </div>
       <p className="caption">Click/tap on the joke to copy it to your clipboard</p>
       <div className="button generateButton" onClick={handleClick}>Generate Joke</div>
