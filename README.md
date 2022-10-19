@@ -18,5 +18,6 @@ Here are some other features to improve the aesthetics and UX:
 * When the mouse cursor hovers over any button, there is a short box shadow animation.
 * Clicking on the joke displayed would copy it to the clipboard so that it can be pasted elsewhere.
 * The joke and prevJoke states are saved in the localStorage, meaning that the 2 jokes are saved and can be accessed when reloading or exiting and returning to the app later.
+* If the prevJoke state is empty, then the previous button will not do anything.
 * The app is responsive and will work on mobile devices as well in portrait and landscape orientations.
   * In landscape orientation, the previous and reset buttons would be displayed in a row inside of a flexbox.
