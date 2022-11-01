@@ -2,11 +2,11 @@ import React from "react";
 
 function App() {
 
-  const [joke, setJoke] = React.useState(localStorage.getItem("joke0") || "");
-  const [prevJoke, setPrevJoke] = React.useState(localStorage.getItem("joke1") || "")
+  const [joke, setJoke] = React.useState <string>(localStorage.getItem("joke0") || "");
+  const [prevJoke, setPrevJoke] = React.useState <string>(localStorage.getItem("joke1") || "")
 
 
-  function jokeSetter(theJoke) {
+  function jokeSetter(theJoke : string) {
     if (joke !== "" || joke !== undefined){
       setPrevJoke(joke);
     }
@@ -33,7 +33,7 @@ function App() {
 
   }
 
-  function handlePrevious() {
+  function handlePrevious(): void {
     if (!joke !== undefined && joke !== "" && !prevJoke !== undefined && prevJoke !== "") {
       const jokeHolder = joke;
       setJoke(prevJoke);
@@ -41,7 +41,7 @@ function App() {
     }
   }
 
-  function handleReset() {
+  function handleReset(): void {
     setJoke("");
     setPrevJoke("");
     if (!joke !== undefined && joke !== "") {
@@ -52,7 +52,7 @@ function App() {
     }
   }
 
-  function handleCopy() {
+  function handleCopy(): void {
     navigator.clipboard.writeText(joke)
   }
 
